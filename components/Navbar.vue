@@ -1,6 +1,6 @@
 <template>
-  <nav class="sticky top-0 inset-x-0  z-50 lg:relative lg:h-24 min-h-full bg-white flex items-center w-screen" ref="navbar">
-    <div class="top-0 inset-x-0 z-50 container mx-auto flex flex-wrap justify-between items-center py-3.5 lg:my-3 px-3 lg:rounded-lg bg-white" :class="fixedNavbar">
+  <nav class="sticky top-0 inset-x-0 z-50 overflow-y-scroll lg:relative lg:h-24 min-h-full flex items-center w-screen select-none" ref="navbar">
+    <div class="top-0 inset-x-0 z-50 container mx-auto flex flex-wrap justify-between items-center py-3.5 lg:my-3 px-3 lg:rounded-lg" :class="fixedNavbar">
       <NuxtLink to="/" class="flex items-center">
         <img src="/docs/images/logo.svg" class="mr-3 h-6 sm:h-9"/>
         <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">GRUPO 8</span>
@@ -56,7 +56,7 @@ export default {
     return {
       observer: null,
       fixedNavbar: {
-        'fixed shadow': false
+        'fixed shadow bg-white': false
       }
     }
   },
@@ -64,7 +64,7 @@ export default {
   beforeMount() {
     this.observer = new IntersectionObserver(
       ([e]) =>  {
-        this.fixedNavbar["fixed shadow"] = !e.isIntersecting
+        this.fixedNavbar["fixed shadow bg-white"] = !e.isIntersecting
         console.log(this.fixedNavbar)
       },
       {
