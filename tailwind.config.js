@@ -2,7 +2,6 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    
     extend: {
       colors:{
         'primary': '#00dc82',
@@ -13,6 +12,7 @@ module.exports = {
         '25':'6.25rem',
         '35':'9.375rem',
         '50':'12.5rem',
+        '50px':'3.125rem'
       },
     },
   },
