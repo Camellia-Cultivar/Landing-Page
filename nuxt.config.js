@@ -3,7 +3,7 @@ export default {
   ssr: false,
 
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
+  target: 'server',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -18,12 +18,13 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-    ],
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '@/assets/css/main.css',
     '~/styles/index.css'
   ],
 
@@ -38,6 +39,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxt/postcss8'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -46,5 +48,11 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {}
+      }
+    }
   }
 }
