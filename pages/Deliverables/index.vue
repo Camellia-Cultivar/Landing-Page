@@ -1,24 +1,24 @@
 <template>
   <div class="container-centered-90 mt-4">
     <div>
-      <p class="text-3xl font-bold text-dark-primary text-center">
+      <p class="text-4xl font-bold text-dark-primary text-center">
         Deliverables
       </p>
     </div>
-    <div class="grid grid-cols-2 mt-16 justify-items-center">
+    <div class="flex flex-wrap justify-center mt-14 gap-9">
       <div
-        class="card flex flex-col items-center bg-gray-50 max-w-max shadow-md p-3"
+        class="card flex flex-col items-center bg-gray-50 max-w-max shadow-md p-3 gap-3"
         v-for="phase in phases"
         :key="phase.title"
       >
-        <p class="text-lg text-center font-semibold text-dark-primary mb-2">
+        <p class="text-xl text-center font-semibold text-dark-primary">
           {{ phase.title }}
         </p>
         <img class="max-h-44 mt-1 mb-2" :src="phase.image" :alt="phase.title" />
-        <div class="flex justify-center mt-2">
+        <div class="flex justify-center">
           <div
             @click="redirect(deliverable.link)"
-            class="flex mx-2 px-1 py-1 cursor-pointer hover:shadow-md"
+            class="flex mx-2 px-1 py-1 cursor-pointer"
             v-for="deliverable in phase.deliverables"
             :key="deliverable.id"
           >
