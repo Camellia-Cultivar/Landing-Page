@@ -45,6 +45,7 @@ function onClickRedirect(link) {
 }
 
 export default {
+  name: "Deliverables",
   data() {
     return {
       phases: {
