@@ -1,7 +1,7 @@
 <template class="">
   <div class="flex flex-col items-center mt-4 mb-5 ">
     <div>
-      <p class="font-bold text-3xl text-dark-primary">Team</p>
+      <p class="font-bold text-3xl text-primary-dark">Team</p>
     </div>
     <div class="grid grid-cols-3 gap-x-35 gap-y-16 mt-16">
       <div
@@ -9,21 +9,21 @@
         v-for="member in team_members"
         :key="member.id"
       >
-        <div class="relative bg-dark-primary p-1 rounded-full  mb-2">
+        <div class="relative bg-primary-dark p-1 rounded-full  mb-2">
         <img
           class="rounded-full max-h-35"
           v-bind:src="member.profile"
           v-bind:alt="member.name"
         />
         <div @click="redirect(member.github)" class="transition ease-out opacity-0 hover:opacity-100 duration-500 absolute flex items-center justify-center top-0 left-0 bg-black bg-opacity-50 h-full w-full rounded-full">
-          <img class="max-h-25 bg-black rounded-full" src="github-white.png" alt="">
+          <img class="max-h-25 bg-black rounded-full" src="~/assets/icons/github-white.png" alt="Github">
         </div>
         </div>
-        <p class="font-medium text-center text-lg text-dark-primary mt-2">{{ member.name }}</p>
+        <p class="font-medium text-center text-lg text-primary-dark mt-2">{{ member.name }}</p>
       </div>
     </div>
     <div class="mt-24">
-      <p class="font-bold text-3xl text-dark-primary">Supervisors</p>
+      <p class="font-bold text-3xl text-primary-dark">Supervisors</p>
     </div>
     <div class="grid grid-cols-2 gap-x-25 mt-16">
       <div
@@ -31,17 +31,17 @@
         v-for="supervisor in supervisors"
         :key="supervisor.id"
       >
-        <div class="relative bg-dark-primary p-1 rounded-full mb-2">
+        <div class="relative bg-primary-dark p-1 rounded-full mb-2">
         <img
           class="rounded-full max-h-50"
           v-bind:src="supervisor.profile"
           v-bind:alt="supervisor.name"
         />
         <div @click="redirect(supervisor.ua)" class="transition ease-out opacity-0 hover:opacity-100 duration-500 absolute flex items-center justify-center top-0 left-0 bg-black bg-opacity-75 h-full w-full rounded-full">
-          <img class="max-h-35" src="ua-white.png" alt="">
+          <img class="max-h-35" src="~/assets/icons/ua-white.png" alt="UA">
         </div>
         </div>
-        <p class="font-medium text-center text-lg text-dark-primary mt-2">
+        <p class="font-medium text-center text-lg text-primary-dark mt-2">
           {{ supervisor.name }}
         </p>
       </div>
