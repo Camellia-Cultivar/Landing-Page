@@ -1,7 +1,7 @@
 <template>
   <div class="container-centered-90 mt-4">
     <div>
-      <p class="text-4xl font-bold text-dark-primary text-center">
+      <p class="text-4xl font-bold text-primary-dark text-center">
         Deliverables
       </p>
     </div>
@@ -11,7 +11,7 @@
         v-for="phase in phases"
         :key="phase.title"
       >
-        <p class="text-xl text-center font-semibold text-dark-primary">
+        <p class="text-xl text-center font-semibold text-primary-dark">
           {{ phase.title }}
         </p>
         <img class="max-h-44 mt-1 mb-2" :src="phase.image" :alt="phase.title" />
@@ -23,7 +23,7 @@
             :key="deliverable.id"
           >
             <p
-              class="underline underline-offset-0.5 cursor-pointer text-dark-primary"
+              class="underline underline-offset-0.5 cursor-pointer text-primary-dark"
             >
               {{ deliverable.title }}
             </p>
@@ -57,31 +57,31 @@ export default {
               id: 1,
               title: "Presentation",
               link: "https://bit.ly/3Op5ce3",
-              icon: "presentation.png",
+              icon: "~/assets/icons/presentation.png",
             },
             {
               id: 2,
               title: "Guidelines",
               link: "https://bit.ly/3vyvNwD",
-              icon: "doc.png",
+              icon: "~/assets/icons/doc.png",
             },
           ],
         },
         Elaboration: {
           title: "Elaboration",
-          image: "elaboration.png",
+          image: "~/assets/icons/elaboration.png",
           deliverables: [
             {
               id: 3,
               title: "Presentation",
               link: "https://bit.ly/3uZcNsr",
-              icon: "presentation.png",
+              icon: "~/assets/icons/presentation.png",
             },
             {
               id: 4,
               title: "Guidelines",
               link: "https://bit.ly/3Ev8doM",
-              icon: "doc.png",
+              icon: "~/assets/icons/doc.png",
             },
           ],
         },

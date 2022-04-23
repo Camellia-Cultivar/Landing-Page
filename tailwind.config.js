@@ -9,9 +9,21 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        'primary': '#32eac4',
-        'faded-primary':"#b6f0e4",
-        'dark-primary':"#045553",
+        'primary': {
+          DEFAULT: '#32EAC4',
+          dark: '#045553',
+          faded: '#b6f0e4',
+          '50': '#D9FBF4',
+          '100': '#C6F9EF',
+          '200': '#A1F5E4',
+          '300': '#7CF2D9',
+          '400': '#57EECF',
+          '500': '#32EAC4',
+          '600': '#15CFA8',
+          '700': '#109C7F',
+          '800': '#0B6955',
+          '900': '#06362C'
+        },
       },
       spacing:{
         '25':'6.25rem',
