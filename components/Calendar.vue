@@ -1,8 +1,8 @@
 <template>
-  <div class="container flex flex-wrap md:flex-nowrap max-w-screen md:-space-x-32 lg:-space-x-40 overflow-hidden md:overflow-visible select-none">
-    <img class="flex-none -mx-20 -mb-8 md:mr-0 md:-ml-56 max-w-screen-md lg:max-w-screen-xl" src="~/assets/images/calendar.svg" alt="">
+  <div class="container flex flex-wrap md:flex-nowrap max-w-screen md:-space-x-16 lg:-space-x-40 overflow-hidden md:overflow-visible select-none">
+    <img class="md:mr-0 md:-ml-10 lg:-ml-56 max-w-7xl w-full" src="~/assets/images/calendar.svg" alt="">
 
-    <div class="grow flex flex-col justify-between my-auto max-w-xl max-h-screen px-6 md:px-10 py-5 rounded">
+    <div class="grow flex flex-col justify-between -mt-16 md:my-auto max-w-xl max-h-screen px-6 md:px-10 py-5 rounded">
       <h1 class="text-4xl md:text-5xl font-bold">Calendar</h1>
 
       <p class="mt-5 text-md md:text-lg">We have organized our tasks in Notion with multiple views. Check our calendar in the link below!</p>

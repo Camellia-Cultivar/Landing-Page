@@ -62,6 +62,7 @@ function redirectTo(link){
 }
 
 export default {
+  name: "Team",
   data() {
     return {
       team_members: [
