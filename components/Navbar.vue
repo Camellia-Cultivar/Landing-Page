@@ -23,8 +23,7 @@
           class=
             "logo
             self-center flex flex-nowrap gap-1.5
-            text-xl font-semibold whitespace-nowrap
-            delay-150 ease-in-out duration-700"
+            text-xl font-semibold whitespace-nowrap"
         >
           <span>GROUP</span>
           <span class="highlight pr-3">8</span>
@@ -61,8 +60,7 @@
               md:text-sm md:font-medium"
             v-for="link in links">
           <li
-            @click="toggleNavbar"
-            class="block p-4 md:my-2 md:mx-4 text-lg font-normal border-b-2 md:p-0 md:pb-0.5 md:bg-transparent lg:hover:border-black border-transparent"
+            class="block p-4 md:my-2 md:mx-4 text-md font-normal border-b-2 md:p-0 md:pb-0.5 md:bg-transparent lg:hover:border-black border-transparent"
             :class=" activeLink.id === link ? 'md:border-primary bg-gray-900/5' : ''">
             <a
               :href="'#'+link"
@@ -132,6 +130,7 @@ export default {
   methods: {
     onScroll() {
       this.topOfPage = window.scrollY < 200
+      this.navbarDropdown = false
     },
     toggleNavbar() {
       this.navbarDropdown = !this.navbarDropdown
@@ -142,6 +141,7 @@ export default {
       return {
         "fixed bg-white": !this.topOfPage || this.navbarDropdown,
         shadow: !this.topOfPage,
+        "text-white": this.topOfPage,
         "bg-opacity-95": !this.topOfPage && !this.navbarDropdown
       }
     }
@@ -154,9 +154,9 @@ export default {
 .logo:hover .highlight {
   font-weight: bold;
   color: #00dc82;
+  transform: scale(1.2);
   transition-delay: 150ms;
   transition-duration: 100ms;
-  transform: scale(1.2);
 }
 
 
