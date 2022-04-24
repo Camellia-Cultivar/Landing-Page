@@ -6,7 +6,7 @@
       <!-- GOALS CARDS -->
       <div class="flex flex-col md:flex-row items-stretch flex-nowrap md:gap-6 max-w-2xl mt-8 gap-5 mx-3 md:mx-0">
         <div class="md:bg-white rounded-lg" v-for="(goal, index) in goals">
-          <div class="text-primary-900 rounded max-w-xs h-full md:bg-primary-700/5 flex flex-row md:flex-col items-center justify-start md:px-3 md:py-5">
+          <div class="text-primary-900 rounded max-w-xs h-full md:bg-primary-700/10 flex flex-row md:flex-col items-center justify-start md:px-3 md:py-5">
             <div class="flex-none flex items-center justify-center rounded-full bg-primary h-8 w-8 md:h-12 md:w-12">
               <h2 class="text-xl md:text-3xl font-bold">{{index + 1}}</h2>
             </div>
@@ -25,8 +25,8 @@ export default {
   data() {
     return {
       goals: [
-        "Identify a camellia specimen's cultivar with crowdsourcing",
-        "Test and refine a reputation algorithm through quizzes",
+        "Help identify camellia specimens' cultivars with crowdsourcing",
+        "Test and refine a user reputation algorithm through quizzes",
         "Mobile application to facilitate submission of specimens"
       ]
     }
