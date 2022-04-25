@@ -13,6 +13,7 @@ module.exports = {
           DEFAULT: '#32EAC4',
           dark: '#045553',
           faded: '#b6f0e4',
+          '5': '#f6fcfa',
           '50': '#D9FBF4',
           '100': '#C6F9EF',
           '200': '#A1F5E4',
