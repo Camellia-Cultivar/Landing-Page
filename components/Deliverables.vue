@@ -32,10 +32,17 @@
           </div>
         </div>
       </div>
+
+      <p class="mt-10 text-4xl md:text-5xl font-bold text-center text-primary-900">
+        Repository
+      </p>
+      <a class="mx-auto flex flex-row flex-wrap md:flex-nowrap justify-center md:px-0 gap-3 md:gap-5 lg:gap-9 w-32" href="https://github.com/fMart8421/Camellia-Cultivar" target="_blank">
+        <img src="~/assets/icons/github-black.png" alt="Github">
+      </a>
     </div>
 
     <img
-      class="-mt-8 md:mt-0 w-full md:max-w-2xl w-full lg:max-w-3xl md:-mr-32 z-0"
+      class="-mt-8 md:mt-0 w-full md:max-w-2xl w-full lg:max-w-3xl md:-mr-32 z-0 self-start"
       src="~/assets/images/deliverables.svg"
       alt=""
     />
