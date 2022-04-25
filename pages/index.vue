@@ -31,6 +31,7 @@ export default {
   .banner {
     background: #f6fcfa url("~assets/images/wave.svg") no-repeat top;
     background-size: 250vh 130vh;
+    transition: background-image 1s;
   }
 }
 
@@ -46,6 +47,7 @@ export default {
   .banner {
     background: #f6fcfa url("~assets/images/wave.svg") no-repeat;
     background-size: 100vw 150vh;
+    transition: background-image 10s;
   }
 }
 </style>
