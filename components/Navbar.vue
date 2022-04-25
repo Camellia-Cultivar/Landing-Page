@@ -61,7 +61,7 @@
             v-for="link in links">
           <li
             class="block p-4 md:my-2 md:mx-4 text-md font-normal border-b-2 md:p-0 md:pb-0.5 md:bg-transparent border-transparent"
-            :class="activeLink.id === link ? 'md:border-primary bg-gray-900/5' : '' + topOfPage ? 'lg:hover:border-white':'lg:hover:border-black'">
+            :class="activeLink.id === link ? 'md:border-primary bg-gray-900/5' : '' + onHoverUnderline">
             <a
               :href="'#'+link"
             >{{ link.charAt(0).toUpperCase()+link.slice(1).toLowerCase()}}</a>
@@ -145,6 +145,9 @@ export default {
         "text-white": this.topOfPage && !this.navbarDropdown,
         "bg-opacity-95": !this.topOfPage && !this.navbarDropdown
       }
+    },
+    onHoverUnderline() {
+      return this.topOfPage ? 'lg:hover:border-white':'lg:hover:border-primary-900'
     }
   }
 }
