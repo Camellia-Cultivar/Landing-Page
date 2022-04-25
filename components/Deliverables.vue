@@ -1,53 +1,44 @@
 <template>
-  <div class="container-centered-90 mt-4">
-    <div class="flex justify-evenly flex-nowrap">
-      <div class="flex flex-col justify-center">
-        <p class="text-4xl font-bold text-primary-dark text-center">
-          Deliverables
-        </p>
-        <div class="flex flex-wrap justify-center mt-14 gap-9">
-          <div
-            class="md:card flex flex-col items-center bg-gray-50 max-w-max shadow-md p-3 gap-3 max-h-max"
-            v-for="phase in phases"
-            :key="phase.title"
-          >
-            <p class="text-xl text-center font-semibold text-primary-dark">
+  <div class="flex flex-col md:flex-row lg:justify-end items-center md:flex-nowrap md:-space-x-20 lg:-space-x-32 space-x-reverse">
+    <div class="w-full flex flex-col justify-center z-20 gap-6 md:gap-12">
+      <p class="text-4xl md:text-5xl font-bold text-center text-primary-900">
+        Deliverables
+      </p>
+      <div class="flex flex-row flex-wrap md:flex-nowrap justify-center md:px-0 gap-3 md:gap-5 lg:gap-9">
+        <div
+          class="md:card flex flex-row md:flex-col items-center bg-primary-10 shadow-md px-3 py-4 gap-3 max-w-7xl"
+          v-for="phase in phases"
+          :key="phase.title"
+        >
+          <img
+            class="max-h-20 md:max-h-32 mt-1 mb-2"
+            :src="phase.image"
+            :alt="phase.title"
+          />
+          <div class="flex flex-col gap-3">
+            <p class="text-xl md:text-2xl text-center font-bold text-primary-900">
               {{ phase.title }}
             </p>
-            <img
-              class="max-h-44 mt-1 mb-2"
-              :src="phase.image"
-              :alt="phase.title"
-            />
-            <div class="flex justify-center">
-              <div
+            <div class="flex flex-col lg:flex-row justify-center items-stretch gap-2">
+              <button
                 @click="redirect(deliverable.link)"
-                class="flex mx-2 px-1 py-1 cursor-pointer"
+                class="text-sm md:text-md flex px-3 py-1.5 font-semibold cursor-pointer rounded-md bg-primary-500 ring-2 ring-transparent even:text-primary-10 even:bg-primary-900 odd:hover:ring-primary/20 even:hover:ring-primary-900/20 justify-center"
                 v-for="deliverable in phase.deliverables"
                 :key="deliverable.id"
               >
-                <p
-                  class="underline underline-offset-0.5 cursor-pointer text-primary-dark"
-                >
-                  {{ deliverable.title }}
-                </p>
-                <img
-                  class="mx-2 max-h-5 cursor-pointer hover:move"
-                  :src="deliverable.icon"
-                  alt=""
-                />
-              </div>
+                {{ deliverable.title }}
+              </button>
             </div>
           </div>
         </div>
       </div>
-
-      <img
-        class="max-w-screen-md lg:max-w-2xl h-full w-full -mr-24 z-0 self-end"
-        src="~/assets/images/deliverables.svg"
-        alt=""
-      />
     </div>
+
+    <img
+      class="-mt-8 md:mt-0 w-full md:max-w-2xl w-full lg:max-w-3xl md:-mr-32 z-0"
+      src="~/assets/images/deliverables.svg"
+      alt=""
+    />
   </div>
 </template>
 
@@ -63,39 +54,33 @@ export default {
       phases: {
         Inception: {
           title: "Inception",
-          image:
-            "https://cdn.discordapp.com/attachments/951969758864105525/968164492225703956/elaboration.png",
+          image: require("@/assets/icons/inception.png"),
           deliverables: [
             {
               id: 1,
               title: "Presentation",
-              link: "https://bit.ly/3Op5ce3",
-              icon: "presentation.png",
+              link: "https://bit.ly/3Op5ce3"
             },
             {
               id: 2,
               title: "Guidelines",
-              link: "https://bit.ly/3vyvNwD",
-              icon: "doc.png",
+              link: "https://bit.ly/3vyvNwD"
             },
           ],
         },
         Elaboration: {
           title: "Elaboration",
-          image:
-            "https://cdn.discordapp.com/attachments/951969758864105525/968164492015992862/inception.png",
+          image: require("@/assets/icons/elaboration.png"),
           deliverables: [
             {
               id: 3,
               title: "Presentation",
-              link: "https://bit.ly/3uZcNsr",
-              icon: "~/assets/icons/presentation.png",
+              link: "https://bit.ly/3uZcNsr"
             },
             {
               id: 4,
               title: "Guidelines",
-              link: "https://bit.ly/3Ev8doM",
-              icon: "~/assets/icons/doc.png",
+              link: "https://bit.ly/3Ev8doM"
             },
           ],
         },
