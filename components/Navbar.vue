@@ -121,7 +121,10 @@ export default {
     );
 
     window.addEventListener('scroll', this.onScroll)
-    this.links.forEach(id => this.observer.observe(document.getElementById(id)))
+
+    this.$nextTick( function () {
+      this.links.forEach(id => this.observer.observe(document.querySelector('#' + id)))
+    })
   },
 
   beforeDestroy() {
