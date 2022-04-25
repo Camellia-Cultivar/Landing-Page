@@ -5,7 +5,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 8rem;
+  scroll-padding-top: 5.5rem;
 }
 
 @layer components {
@@ -37,6 +37,6 @@ html {
   }
 
   .card {
-     @apply rounded-lg shadow 
+     @apply rounded-lg shadow
   }
 }
