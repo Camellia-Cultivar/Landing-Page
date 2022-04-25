@@ -5,13 +5,11 @@
 
       <!-- GOALS CARDS -->
       <div class="flex flex-col md:flex-row items-stretch flex-nowrap md:gap-6 max-w-2xl mt-8 gap-5 mx-3 md:mx-0">
-        <div class="md:bg-white rounded-lg" v-for="(goal, index) in goals">
-          <div class="text-primary-900 rounded max-w-xs h-full md:bg-primary-700/10 flex flex-row md:flex-col items-center justify-start md:px-3 md:py-5">
-            <div class="flex-none flex items-center justify-center rounded-full bg-primary h-8 w-8 md:h-12 md:w-12">
-              <h2 class="text-xl md:text-3xl font-bold">{{index + 1}}</h2>
-            </div>
-            <p class="ml-3 md:ml-0 md:mt-5 text-md md:text-xl md:text-center">{{ goal }}</p>
+        <div class="md:bg-primary-10 rounded-lg text-primary-900 rounded max-w-xs h-full flex flex-row md:flex-col items-center justify-start md:px-3 md:py-5" v-for="(goal, index) in goals">
+          <div class="flex-none flex items-center justify-center rounded-full bg-primary h-8 w-8 md:h-12 md:w-12">
+            <h2 class="text-xl md:text-3xl font-bold">{{index + 1}}</h2>
           </div>
+          <p class="ml-3 md:ml-0 md:mt-5 text-md md:text-xl md:text-center">{{ goal }}</p>
         </div>
       </div>
     </div>
