@@ -10,7 +10,14 @@
 </template>
 
 <script>
+import Home from "@/components/Home";
+import Goals from "@/components/Goals";
+import Calendar from "@/components/Calendar";
+import Deliverables from "@/components/Deliverables";
+import Team from "@/components/Team";
+
 export default {
+  components: {Home, Goals, Calendar, Deliverables, Team},
   data() {
     return {
       components: [
