@@ -60,8 +60,8 @@
               md:text-sm md:font-medium"
             v-for="link in links">
           <li
-            class="block p-4 md:my-2 md:mx-4 text-md font-normal border-b-2 md:p-0 md:pb-0.5 md:bg-transparent lg:hover:border-black border-transparent"
-            :class="activeLink.id === link ? 'md:border-primary bg-gray-900/5' : ''">
+            class="block p-4 md:my-2 md:mx-4 text-md font-normal border-b-2 md:p-0 md:pb-0.5 md:bg-transparent border-transparent"
+            :class="activeLink.id === link ? 'md:border-primary bg-gray-900/5' : '' + topOfPage ? 'lg:hover:border-white':'lg:hover:border-black'">
             <a
               :href="'#'+link"
             >{{ link.charAt(0).toUpperCase()+link.slice(1).toLowerCase()}}</a>
@@ -93,14 +93,16 @@ export default {
   },
 
   beforeMount() {
+  },
+
+  mounted() {
     let thresholdArray = []
     let len = 5
     for (let i=0; i <= len; i++)
       thresholdArray.push(i/len)
-    console.log(thresholdArray)
 
     this.observer = new IntersectionObserver( (entries) =>
-        entries.forEach((e) =>
+      entries.forEach((e) =>
         {
           if(!e.isIntersecting)
             return;
@@ -115,10 +117,9 @@ export default {
           rootMargin: '0px',
           threshold: thresholdArray
         }
-      ));
-  },
+      )
+    );
 
-  mounted() {
     window.addEventListener('scroll', this.onScroll)
     this.links.forEach(id => this.observer.observe(document.getElementById(id)))
   },
