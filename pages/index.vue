@@ -34,17 +34,18 @@ export default {
 
 <style scoped>
 
-@media (max-width: 640px) {
+.banner {
+  background: #f6fcfa url("~assets/images/wave.svg") no-repeat top;
+}
+
+@media (max-width: 767px) {
   .banner {
-    background: #f6fcfa url("~assets/images/wave.svg") no-repeat top;
     background-size: 250vh 130vh;
-    transition: background-image 1s;
   }
 }
 
 @media (min-width: 768px) {
   .banner {
-    background: #f6fcfa url("~assets/images/wave.svg") no-repeat top;
     background-size: 300vw 150vh;
   }
 
@@ -52,9 +53,7 @@ export default {
 
 @media (min-width: 1024px) {
   .banner {
-    background: #f6fcfa url("~assets/images/wave.svg") no-repeat;
     background-size: 100vw 150vh;
-    transition: background-image 10s;
   }
 }
 </style>

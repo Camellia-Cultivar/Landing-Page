@@ -1,26 +1,27 @@
 <template>
-  <div class="container-centered-90 flex flex-col mt-4 mb-5">
+  <div class="flex flex-col mt-4 mb-5">
     <div
-      class="self-start flex flex-nowrap flex-col md:flex-row w-full justify-evenly"
+      class="flex flex-nowrap flex-col md:flex-row w-full justify-evenly md:-space-x-44"
     >
       <img
-        class="max-w-screen-md lg:max-w-2xl h-full w-full -ml-24 z-0 self-center"
+        class="max-w-screen-md lg:max-w-2xl h-full w-full md:-ml-10 z-0 self-center"
         src="~/assets/images/team.svg"
         alt=""
       />
-      <div class="">
-        <p class="text-center font-bold text-4xl md:text-5xl text-primary-dark -mt-6">Team</p>
+      <div class="flex flex-col justify-center gap-10 z-10">
+        <p class="text-center font-bold text-4xl md:text-5xl text-primary-900">Team</p>
         <div
-          class="grid gap-y-8 sm:grid-cols-2 sm:gap-x-20 sm:gap-y-12 lg:grid-cols-2 lg:gap-x-10 lg:gap-y-16 mt-20"
+          class="max-w-screen-sm lg:max-w-lg md:max-w-2xl grid grid-cols-2 grid-rows-3 md:grid-cols-3 md:grid-rows-2 justify-center gap-4 items-stretch px-4 md:px-0"
         >
+          <!-- CARDS -->
           <div
-            class="flex flex-col items-center bg-gray-50 pt-4 pb-5 px-7 rounded-lg shadow"
+            class="flex flex-col items-center rounded-lg shadow-lg shadow-primary-900/10 bg-primary-5 px-4 py-1.5 md:px-6 md:py-3"
             v-for="member in team_members"
             :key="member.id"
           >
-            <div class="relative bg-primary-dark p-1 rounded-full mb-2">
+            <div class="relative bg-gradient-to-br from-primary-700 via-primary-900 to-primary-900 p-1 rounded-full mb-2 flex-none w-full max-w-[10rem]">
               <img
-                class="rounded-full max-h-35"
+                class="rounded-full w-full h-full"
                 v-bind:src="member.profile"
                 v-bind:alt="member.name"
               />
@@ -29,7 +30,7 @@
                 class="transition ease-out opacity-0 hover:opacity-100 duration-500 absolute flex items-center justify-center top-0 left-0 bg-black bg-opacity-50 h-full w-full rounded-full"
               >
                 <img
-                  class="max-h-25 bg-black rounded-full"
+                  class="max-h-20 bg-black rounded-full cursor-pointer"
                   src="~/assets/icons/github-white.png"
                   alt="Github"
                 />
@@ -37,7 +38,7 @@
             </div>
             <p
               @click="redirect(member.github)"
-              class="font-medium text-center text-lg underline lg:no-underline text-primary-dark mt-2"
+              class="font-medium text-center text-md md:text-md underline lg:no-underline text-primary-900 mt-2"
             >
               {{ member.name }}
             </p>
@@ -45,44 +46,57 @@
         </div>
       </div>
     </div>
-<div class="flex justify-evenly mt-24">
-<div class=" flex flex-col justify-center">
-      <p class="font-bold text-3xl text-center text-primary-dark">Supervisors</p>
-    
-    <div
-      class="grid gap-y-8 sm:gap-y-0 sm:gap-x-20 sm:grid-cols-2 gap-x-25 mt-16"
-    >
-      <div
-        class="flex flex-col items-center bg-gray-50 pt-4 pb-5 px-8 rounded-lg shadow"
-        v-for="supervisor in supervisors"
-        :key="supervisor.id"
-      >
-        <div class="relative bg-primary-dark p-1 rounded-full mb-2">
-          <img
-            class="rounded-full max-h-35 sm:max-h-50"
-            v-bind:src="supervisor.profile"
-            v-bind:alt="supervisor.name"
-          />
+    <div class="flex flex-col md:flex-row justify-center md:justify-end mt-24">
+      <div class="flex flex-col justify-center gap-10 z-10">
+        <p class="text-center font-bold text-4xl md:text-5xl text-primary-900">Supervisors</p>
+
+        <div
+          class="max-w-screen-sm lg:max-w-lg md:max-w-2xl grid grid-cols-2 grid-rows-1 justify-center gap-2 md:gap-4 items-stretch"
+        >
+          <!-- CARDS -->
           <div
-            @click="redirect(supervisor.ua)"
-            class="transition ease-out opacity-0 hover:opacity-100 duration-500 absolute flex items-center justify-center top-0 left-0 bg-black bg-opacity-75 h-full w-full rounded-full"
+            class="flex flex-col items-center rounded-lg shadow-lg shadow-primary-900/10 bg-primary-5 px-6 py-3"
+            v-for="supervisor in supervisors"
+            :key="supervisor.id"
           >
-            <img class="max-h-35" src="~/assets/icons/ua-white.png" alt="UA" />
+            <div class="relative bg-gradient-to-br from-primary-700 via-primary-900 to-primary-900 p-1 rounded-full mb-2 flex-none w-full max-w-[10rem]">
+              <img
+                class="rounded-full w-full h-full"
+                v-bind:src="supervisor.profile"
+                v-bind:alt="supervisor.name"
+              />
+              <div
+                @click="redirect(supervisor.ua)"
+                class="transition ease-out opacity-0 hover:opacity-100 duration-500 absolute flex items-center justify-center top-0 left-0 bg-black bg-opacity-50 h-full w-full rounded-full"
+              >
+                <img
+                  class="max-h-20 cursor-pointer"
+                  src="~/assets/icons/ua-white.png"
+                  alt="University of Aveiro"
+                />
+              </div>
+            </div>
+            <p
+              @click="redirect(supervisor.ua)"
+              class="font-medium text-center text-xl md:text-md underline lg:no-underline text-primary-900 mt-2"
+            >
+              {{ supervisor.name }}
+            </p>
           </div>
         </div>
-        <p class="font-medium text-center text-lg text-primary-dark mt-2">
-          {{ supervisor.name }}
-        </p>
+        <p class="mt-16 text-center font-bold text-4xl md:text-5xl text-primary-900">Stakeholders</p>
+
+        <a href="https://www.camelias.pt/" target="_blank" class="py-7 px-4 rounded-lg shadow-lg shadow-primary-900/10 flex items-center justify-center bg-white" >
+          <img src="https://www.camelias.pt/assets/images/logo_apc.jpg" alt="Associação Portuguesa das Camélias"/>
+        </a>
       </div>
-    </div>
-    </div>
-    <img
-        class="max-w-screen-md lg:max-w-2xl h-full w-full -mr-24 z-0 self-end"
+      <img
+        class="max-w-screen-md lg:max-w-2xl h-full w-full md:-mr-24 z-0 self-end"
         src="~/assets/images/marketing-officer_1.svg"
         alt=""
       />
-</div>
-    
+    </div>
+
   </div>
 </template>
 
@@ -94,6 +108,7 @@ function onHoverChangeClass(hover) {
     return "hidden";
   }
 }
+
 function redirectTo(link) {
   window.open(link);
 }
