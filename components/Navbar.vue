@@ -37,7 +37,7 @@
             "inline-flex items-center
             p-2 ml-1 mr-3
             text-sm
-            rounded-lg hover:bg-gray-100
+            rounded-lg hover:bg-black/5
             md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200"
         >
           <span class="sr-only">Open main menu</span>
@@ -51,7 +51,7 @@
           "fixed top-16 md:relative md:top-0 md:order-1
            md:flex justify-between items-center
            w-full md:w-auto
-           bg-white md:bg-transparent"
+           bg-primary-5 md:bg-transparent"
         :class="{ hidden : !this.navbarDropdown}"
       >
         <ul class=
@@ -60,8 +60,8 @@
               md:text-sm md:font-medium"
             v-for="link in links">
           <li
-            class="block p-4 md:my-2 md:mx-4 text-md font-normal border-b-2 md:p-0 md:pb-0.5 md:bg-transparent lg:hover:border-black border-transparent"
-            :class=" activeLink.id === link ? 'md:border-primary bg-gray-900/5' : ''">
+            class="block p-4 md:my-2 md:mx-4 text-md font-normal border-b-2 md:p-0 md:pb-0.5 md:bg-transparent border-transparent"
+            :class="activeLink.id === link ? 'md:border-primary bg-gray-900/5' : '' + onHoverUnderline">
             <a
               :href="'#'+link"
             >{{ link.charAt(0).toUpperCase()+link.slice(1).toLowerCase()}}</a>
@@ -93,14 +93,16 @@ export default {
   },
 
   beforeMount() {
+  },
+
+  mounted() {
     let thresholdArray = []
     let len = 5
     for (let i=0; i <= len; i++)
       thresholdArray.push(i/len)
-    console.log(thresholdArray)
 
     this.observer = new IntersectionObserver( (entries) =>
-        entries.forEach((e) =>
+      entries.forEach((e) =>
         {
           if(!e.isIntersecting)
             return;
@@ -115,10 +117,9 @@ export default {
           rootMargin: '0px',
           threshold: thresholdArray
         }
-      ));
-  },
+      )
+    );
 
-  mounted() {
     window.addEventListener('scroll', this.onScroll)
     this.links.forEach(id => this.observer.observe(document.getElementById(id)))
   },
@@ -139,11 +140,14 @@ export default {
   computed: {
     navbar() {
       return {
-        "fixed bg-white": !this.topOfPage || this.navbarDropdown,
+        "fixed bg-primary-5": !this.topOfPage || this.navbarDropdown,
         shadow: !this.topOfPage,
-        "text-white": this.topOfPage,
+        "text-white": this.topOfPage && !this.navbarDropdown,
         "bg-opacity-95": !this.topOfPage && !this.navbarDropdown
       }
+    },
+    onHoverUnderline() {
+      return this.topOfPage ? 'lg:hover:border-white':'lg:hover:border-primary-900'
     }
   }
 }
