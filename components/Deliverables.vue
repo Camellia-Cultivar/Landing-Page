@@ -1,12 +1,12 @@
 <template>
-  <div class="flex flex-col md:flex-row lg:justify-end items-center md:flex-nowrap md:-space-x-20 lg:-space-x-32 space-x-reverse">
-    <div class="w-full flex flex-col justify-center z-20 gap-6 md:gap-12">
+  <div class="flex flex-col md:flex-row lg:justify-end items-center md:flex-nowrap">
+    <div class="w-full md:w-1/2 flex flex-col justify-center z-20 gap-6 md:gap-12">
       <p class="text-4xl md:text-5xl font-bold text-center text-primary-900">
         Deliverables
       </p>
       <div class="flex flex-row flex-wrap md:flex-nowrap justify-center md:px-0 gap-3 md:gap-5 lg:gap-9">
         <div
-          class="md:card flex flex-row md:flex-col items-center bg-primary-10 shadow-md px-3 py-4 gap-3 max-w-7xl"
+          class="md:card flex flex-row md:flex-col items-center bg-primary-10 shadow-md px-3 py-4 gap-3 max-w-7xl flex-1"
           v-for="phase in phases"
           :key="phase.title"
         >
@@ -42,7 +42,7 @@
     </div>
 
     <img
-      class="-mt-8 md:mt-0 w-full md:max-w-2xl w-full lg:max-w-3xl md:-mr-32 z-0 self-start"
+      class="mt-8 md:mt-0 w-full md:max-w-2xl lg:max-w-3xl md:-mr-32 z-0 self-start"
       src="~/assets/images/deliverables.svg"
       alt=""
     />
@@ -88,6 +88,17 @@ export default {
               id: 4,
               title: "Guidelines",
               link: "https://bit.ly/3Ev8doM"
+            },
+          ],
+        },
+        Contruction: {
+          title: "Contruction",
+          image: require("@/assets/icons/construction.png"),
+          deliverables: [
+            {
+              id: 5,
+              title: "Presentation",
+              link: "https://bit.ly/3NiqloV"
             },
           ],
         },
