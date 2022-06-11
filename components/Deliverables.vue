@@ -36,7 +36,7 @@
       <p class="mt-10 text-4xl md:text-5xl font-bold text-center text-primary-900">
         Repository
       </p>
-      <a class="mx-auto flex flex-row flex-wrap md:flex-nowrap justify-center md:px-0 gap-3 md:gap-5 lg:gap-9 w-32" href="https://github.com/fMart8421/Camellia-Cultivar" target="_blank">
+      <a class="mx-auto flex flex-row flex-wrap md:flex-nowrap justify-center md:px-0 gap-3 md:gap-5 lg:gap-9 w-32" href="https://github.com/Camellia-Cultivar/Camellia-Cultivar" target="_blank">
         <img src="~/assets/icons/github-black.png" alt="Github">
       </a>
     </div>

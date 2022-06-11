@@ -11,11 +11,11 @@
       <div class="flex flex-col justify-center gap-10 z-10">
         <p class="text-center font-bold text-4xl md:text-5xl text-primary-900">Team</p>
         <div
-          class="max-w-screen-sm lg:max-w-lg md:max-w-2xl grid grid-cols-2 grid-rows-3 md:grid-cols-3 md:grid-rows-2 justify-center gap-4 items-stretch px-4 md:px-0"
+          class="max-w-screen-sm lg:max-w-lg md:max-w-2xl flex flex-wrap justify-center gap-4 items-stretch px-4 md:px-0"
         >
           <!-- CARDS -->
           <div
-            class="flex flex-col items-center rounded-lg shadow-lg shadow-primary-900/10 bg-primary-5 px-4 py-1.5 md:px-6 md:py-3"
+            class="max-w-[10rem] flex flex-col items-center rounded-lg shadow-lg shadow-primary-900/10 bg-primary-5 py-4 px-6 md:py-3"
             v-for="member in team_members"
             :key="member.id"
           >
@@ -38,7 +38,7 @@
             </div>
             <p
               @click="redirect(member.github)"
-              class="font-medium text-center text-md md:text-md underline lg:no-underline text-primary-900 mt-2"
+              class="font-medium text-center text-sm md:text-md underline lg:no-underline text-primary-900 mt-2"
             >
               {{ member.name }}
             </p>
@@ -127,34 +127,27 @@ export default {
         },
         {
           id: 2,
-          name: "Nuno Fahla",
-          profile:
-            "https://cdn.discordapp.com/attachments/951969758864105528/958121256216035368/chrome_N8OGcvrGxH.png",
-          github: "https://github.com/broth2",
-        },
-        {
-          id: 3,
           name: "Patrícia Dias",
           profile:
             "https://cdn.discordapp.com/attachments/951969758864105528/958121255976968202/chrome_3MPCBwfm4Y.png",
           github: "https://github.com/Patricia-Dias",
         },
         {
-          id: 4,
+          id: 3,
           name: "Sophie Pousinho",
           profile:
             "https://cdn.discordapp.com/attachments/951969758864105528/958121256727756870/chrome_wfLsvOvI93.png",
           github: "https://github.com/sophjane",
         },
         {
-          id: 5,
+          id: 4,
           name: "Tiago Matos",
           profile:
             "https://cdn.discordapp.com/attachments/784541349126733825/985246031199502436/unknown.png",
           github: "https://github.com/tiagomrm",
         },
         {
-          id: 6,
+          id: 5,
           name: "Vitor Dias",
           profile:
             "https://cdn.discordapp.com/attachments/951969758864105528/958121256455131196/chrome_W1ItPMiKMG.png",
