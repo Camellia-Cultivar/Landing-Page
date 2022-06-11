@@ -150,7 +150,7 @@ export default {
           id: 5,
           name: "Tiago Matos",
           profile:
-            "https://media-exp1.licdn.com/dms/image/C5603AQFMBoXcpjEFZg/profile-displayphoto-shrink_800_800/0/1635358918029?e=1654128000&v=beta&t=obhoTc8ZKuh7YfBn_8o7oQHvdoDS8sVVXSwxcWgge7U",
+            "https://cdn.discordapp.com/attachments/784541349126733825/985246031199502436/unknown.png",
           github: "https://github.com/tiagomrm",
         },
         {
