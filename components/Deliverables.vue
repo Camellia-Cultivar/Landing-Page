@@ -4,7 +4,7 @@
       <p class="text-4xl md:text-5xl font-bold text-center text-primary-900">
         Deliverables
       </p>
-      <div class="flex flex-row flex-wrap md:flex-nowrap justify-center md:px-0 gap-3 md:gap-5 lg:gap-9">
+      <div class=" inline-grid grid-cols-1 justify-items-center md:justify-items-stretch md:grid-cols-2 lg:grid-cols-3 md:flex-nowrap justify-center md:px-0 gap-3 md:gap-5 lg:gap-9">
         <div
           class="md:card flex flex-row md:flex-col items-center bg-primary-10 shadow-md px-3 py-4 gap-3 max-w-7xl flex-1"
           v-for="phase in phases"
@@ -99,6 +99,44 @@ export default {
               id: 5,
               title: "Presentation",
               link: "https://bit.ly/3NiqloV"
+            },
+          ],
+        },
+        StudentsAtDeti: {
+          title: "students @deti",
+          image: require("@/assets/icons/studentsatdeti1.png"),
+          deliverables: [
+            {
+              id: 6,
+              title: "Video",
+              link: "https://youtu.be/CDTAhkFSiAQ"
+            },
+            {
+              id: 7,
+              title: "Poster",
+              link: "https://bit.ly/3yfXbCl"
+            },
+          ],
+        },
+        Transition: {
+          title: "Transition",
+          image: require("@/assets/icons/transition.png"),
+          deliverables: [
+            {
+              id: 8,
+              title: "Presentation",
+              link: "https://bit.ly/3ukKfsH"
+            },
+          ],
+        },
+        OurWebsite: {
+          title: "Our Website",
+          image: require("@/assets/icons/camellia_logo.png"),
+          deliverables: [
+            {
+              id: 9,
+              title: "Check it out!",
+              link: "https://camellia-cultivar.netlify.app/"
             },
           ],
         },
